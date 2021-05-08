@@ -10,9 +10,8 @@ const guess = createGuess(1, 100);
 document.getElementById("submit").addEventListener("click", extractGuess);
 
 function extractGuess() {
-    var userGuess = document.getElementsById("guess").value;
+    var userGuess = document.getElementById("guess").value;
     console.log(userGuess);
-    alert("Your Guess: " + userGuess);
     return userGuess;
 }
 
