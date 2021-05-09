@@ -5,29 +5,27 @@ function createGuess(min, max) {
 
 const guess = createGuess(1, 100);
 
-
 // Extract User Input and Store It
-document.getElementById("submit").addEventListener("click", extractGuess);
+var userGuesses = [];
 
-function extractGuess() {
-    var userGuess = document.getElementById("guess").value;
-    console.log(userGuess);
-    return userGuess;
-}
-
+document.getElementById('submit').addEventListener('click', function (event) {
+    var userGuess = parseInt(document.getElementById('guess').value, 10);
+    document.getElementById('guess').value = '';
+    userGuesses.push(userGuess);
+});
 
 // Evaluate User Input and Compare it to the Guess Value
 function evalGuess(userGuess, guess) {
-    if ( userGuess.isInteger() ) {
+    if (userGuess.isInteger()) {
         if (userGuess == guess) {
-            return "win";
+            return 'win';
         } else if (userGuess < guess) {
-            return "low";
+            return 'low';
         } else {
-            return "high";
+            return 'high';
         }
     } else {
-        alert("Please enter an integer value.");
+        alert('Please enter an integer value.');
     }
 }
 
@@ -36,3 +34,4 @@ function evalGuess(userGuess, guess) {
 // End the Game
 
 // Reset the Game
+// use the reset() function aka document.getElementById("myForm").reset()
