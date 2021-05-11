@@ -1,6 +1,7 @@
 # TODO List
 
 -   Build base application
+-   Implement the rest button
 -   Update the Visual Interface
 -   Show user's previous guesses
 -   Tell the user the low and high limits of the game

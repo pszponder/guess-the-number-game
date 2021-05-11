@@ -1,0 +1,35 @@
+body {
+    background-color: lightslategray;
+}
+
+h1,
+form {
+    text-align: center;
+    padding: 10px;
+}
+
+h1 {
+    background-color: lightseagreen;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+form {
+    margin-top: 40px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type='text'] {
+    margin-bottom: 10px;
+}
+
+input[type='submit'],
+input[type='reset'] {
+    /* display: inline-block; */
+    width: 60px;
+}
