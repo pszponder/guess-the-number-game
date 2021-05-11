@@ -20,8 +20,8 @@ document.getElementById('submit').addEventListener('click', function (event) {
 
     console.log(evalGuess(userGuess, guess)); // TODO: Remove this line later
 
-    // // Evaluate User Input and Inform User How to Proceed
-    // determineNextStep(evalGuess(userGuess, guess));
+    // Evaluate User Input and Inform User How to Proceed
+    determineNextStep(evalGuess(userGuess, guess));
 
     evaluatedStep = evalGuess(userGuess, guess);
     displayGuess(userGuess, evaluatedStep);
@@ -51,12 +51,12 @@ function determineNextStep(evaluation) {
         case 'notInRange':
             alert('Please enter an integer value within the specified range');
             break;
-        case 'low':
-            alert('You guessed too low, try again.');
-            break;
-        case 'high':
-            alert('You guessed too high, try again.');
-            break;
+        // case 'low':
+        //     alert('You guessed too low, try again.');
+        //     break;
+        // case 'high':
+        //     alert('You guessed too high, try again.');
+        //     break;
         case 'NaN':
             alert('Please enter an integer value');
             break;
