@@ -21,7 +21,7 @@ document.getElementById('submit').addEventListener('click', function (event) {
     console.log(evalGuess(userGuess, guess)); // TODO: Remove this line later
 
     // Evaluate User Input and Inform User How to Proceed
-    determineNextStep(evalGuess(userGuess, guess));
+    reportError(evalGuess(userGuess, guess));
 
     evaluatedStep = evalGuess(userGuess, guess);
     displayGuess(userGuess, evaluatedStep);
@@ -46,17 +46,11 @@ function evalGuess(userGuess, guess) {
 
 // Tell the User if They Guessed Correctly or Incorrectly
 // Reset the Game if the User Wins
-function determineNextStep(evaluation) {
+function reportError(evaluation) {
     switch (evaluation) {
         case 'notInRange':
             alert('Please enter an integer value within the specified range');
             break;
-        // case 'low':
-        //     alert('You guessed too low, try again.');
-        //     break;
-        // case 'high':
-        //     alert('You guessed too high, try again.');
-        //     break;
         case 'NaN':
             alert('Please enter an integer value');
             break;
@@ -82,9 +76,13 @@ function displayGuess(userGuess, evalStep) {
     }
 }
 
-// Reset the Game
+// Add Event Listener Function to Reset Button
 document.getElementById('reset').addEventListener('click', function (event) {
+    resetFunction();
+});
+
+function resetFunction() {
     userGuesses = [];
     guess = createGuess(a, b);
     console.log('New guess: ' + guess); // TODO: Remove this later (using for debugging)
-});
+}
