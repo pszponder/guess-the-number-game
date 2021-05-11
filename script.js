@@ -14,7 +14,7 @@ var userGuesses = [];
 document.getElementById('submit').addEventListener('click', function (event) {
     // Extract User Input and Store It
     var userGuess = parseInt(document.getElementById('guess').value, 10);
-    console.log(userGuess);
+    console.log(userGuess); // TODO: Remove this line later
     document.getElementById('guess').value = '';
     userGuesses.push(userGuess);
 
@@ -22,8 +22,6 @@ document.getElementById('submit').addEventListener('click', function (event) {
 
     // Evaluate User Input and Inform User How to Proceed
     determineNextStep(evalGuess(userGuess, guess));
-
-    // Reset the Game if the User Wins
 });
 
 // Create a function to Evaluate User Input and Compare it to the Guess Value
@@ -60,14 +58,21 @@ function determineNextStep(evaluation) {
             alert('Please enter an integer value');
             break;
         case 'win':
-            alert("You Win! Let's play again!");
-            resetGame();
+            alert(
+                'You Win! If you would like to play again, click the Reset button'
+            );
             break;
     }
 }
 
 // Reset the Game
-function resetGame() {
+document.getElementById('reset').addEventListener('click', function (event) {
     userGuesses = [];
     guess = createGuess(a, b);
-}
+    console.log('New guess: ' + guess); // TODO: Remove this later (using for debugging)
+});
+
+// function resetGame() {
+//     userGuesses = [];
+//     guess = createGuess(a, b);
+// }
