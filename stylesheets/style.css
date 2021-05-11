@@ -33,3 +33,10 @@ input[type='reset'] {
     /* display: inline-block; */
     width: 60px;
 }
+
+div {
+    text-align: center;
+    padding: 5px;
+    background-color: beige;
+    border: 1px solid black;
+}

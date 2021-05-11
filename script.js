@@ -45,7 +45,6 @@ function evalGuess(userGuess, guess) {
 }
 
 // Tell the User if They Guessed Correctly or Incorrectly
-// Reset the Game if the User Wins
 function reportError(evaluation) {
     switch (evaluation) {
         case 'notInRange':
