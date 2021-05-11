@@ -20,8 +20,11 @@ document.getElementById('submit').addEventListener('click', function (event) {
 
     console.log(evalGuess(userGuess, guess)); // TODO: Remove this line later
 
-    // Evaluate User Input and Inform User How to Proceed
-    determineNextStep(evalGuess(userGuess, guess));
+    // // Evaluate User Input and Inform User How to Proceed
+    // determineNextStep(evalGuess(userGuess, guess));
+
+    evaluatedStep = evalGuess(userGuess, guess);
+    displayGuess(userGuess, evaluatedStep);
 });
 
 // Create a function to Evaluate User Input and Compare it to the Guess Value
@@ -65,14 +68,23 @@ function determineNextStep(evaluation) {
     }
 }
 
+// Display User's Guess on the Screen
+function displayGuess(userGuess, evalStep) {
+    // console.log('evaluated step: ', evalStep);
+    if (evalStep === 'low' || evalStep === 'high') {
+        var guessDiv = document.createElement('div');
+        guessDiv.innerHTML = `<p> You guessed: ${userGuess}. Your guess is ${evalStep}. </p>`;
+        document.body.appendChild(guessDiv);
+    } else if (evalStep === 'win') {
+        var guessDiv = document.createElement('div');
+        guessDiv.innerHTML = `<p> You guessed: ${userGuess}. You Win! </p>`;
+        document.body.appendChild(guessDiv);
+    }
+}
+
 // Reset the Game
 document.getElementById('reset').addEventListener('click', function (event) {
     userGuesses = [];
     guess = createGuess(a, b);
     console.log('New guess: ' + guess); // TODO: Remove this later (using for debugging)
 });
-
-// function resetGame() {
-//     userGuesses = [];
-//     guess = createGuess(a, b);
-// }
