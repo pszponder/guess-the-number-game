@@ -54,9 +54,8 @@ function reportError(evaluation) {
             alert('Please enter an integer value');
             break;
         case 'win':
-            alert(
-                'You Win! If you would like to play again, click the Reset button'
-            );
+            resetFunction();
+            alert('You Win!');
             break;
     }
 }
@@ -81,6 +80,7 @@ document.getElementById('reset').addEventListener('click', function (event) {
 });
 
 function resetFunction() {
+    location.reload();
     userGuesses = [];
     guess = createGuess(a, b);
     console.log('New guess: ' + guess); // TODO: Remove this later (using for debugging)
