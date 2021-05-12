@@ -22,6 +22,7 @@ label {
     display: inline-block;
     margin-bottom: 5px;
     font-weight: bold;
+    font-size: 20px;
 }
 
 input[type='text'] {
@@ -30,11 +31,14 @@ input[type='text'] {
 
 input[type='submit'],
 input[type='reset'] {
-    /* display: inline-block; */
     width: 60px;
 }
 
 div {
+    min-width: 150px;
+    max-width: 300px;
+    /* max-width: %; */
+    margin: auto;
     text-align: center;
     padding: 5px;
     background-color: beige;

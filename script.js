@@ -6,7 +6,6 @@ function createGuess(min, max) {
 const a = 1;
 const b = 100;
 var guess = createGuess(a, b);
-console.log('Number: ' + guess); // TODO: Remove this line later
 
 // Add eventListener to the Submit Button
 var userGuesses = [];
@@ -14,15 +13,13 @@ var userGuesses = [];
 document.getElementById('submit').addEventListener('click', function (event) {
     // Extract User Input and Store It
     var userGuess = parseInt(document.getElementById('guess').value, 10);
-    console.log(userGuess); // TODO: Remove this line later
     document.getElementById('guess').value = '';
     userGuesses.push(userGuess);
-
-    console.log(evalGuess(userGuess, guess)); // TODO: Remove this line later
 
     // Evaluate User Input and Inform User How to Proceed
     reportError(evalGuess(userGuess, guess));
 
+    // Display User Guesses on the Screen
     evaluatedStep = evalGuess(userGuess, guess);
     displayGuess(userGuess, evaluatedStep);
 });
@@ -60,7 +57,7 @@ function reportError(evaluation) {
     }
 }
 
-// Display User's Guess on the Screen
+// Declare Function to Display User's Guess on the Screen
 function displayGuess(userGuess, evalStep) {
     // console.log('evaluated step: ', evalStep);
     if (evalStep === 'low' || evalStep === 'high') {
@@ -83,5 +80,4 @@ function resetFunction() {
     location.reload();
     userGuesses = [];
     guess = createGuess(a, b);
-    console.log('New guess: ' + guess); // TODO: Remove this later (using for debugging)
 }
