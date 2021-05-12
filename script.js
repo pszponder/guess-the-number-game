@@ -59,13 +59,13 @@ function reportError(evaluation) {
 
 // Declare Function to Display User's Guess on the Screen
 function displayGuess(userGuess, evalStep) {
-    // console.log('evaluated step: ', evalStep);
+    var guessDiv = document.createElement('div');
     if (evalStep === 'low' || evalStep === 'high') {
-        var guessDiv = document.createElement('div');
+        // var guessDiv = document.createElement('div');
         guessDiv.innerHTML = `<p> You guessed: ${userGuess}. Your guess is ${evalStep}. </p>`;
         document.body.appendChild(guessDiv);
     } else if (evalStep === 'win') {
-        var guessDiv = document.createElement('div');
+        // var guessDiv = document.createElement('div');
         guessDiv.innerHTML = `<p> You guessed: ${userGuess}. You Win! </p>`;
         document.body.appendChild(guessDiv);
     }
